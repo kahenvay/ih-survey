@@ -4,110 +4,518 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Impact Hub</title>
-  <meta name="description" content="Impact Hub">
+  <title>Impact Hub Community Survey</title>
+  <meta name="description" content="Impact Hub Community Survey">
   <meta name="author" content="Impact Hub">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+<style>
+	:root {
+		--color-orange: #F78A3C;
+		--color-green: #7EBB55;
+		--color-blue: #41BED0;
+		--color-dark-blue: #1C395C;
+		--color-red: #812926; 
+	}
+
+	body {
+	  font-family: "Poppins";
+	}
+  
+	
+	@font-face {
+	  font-display: swap;
+	  font-family: 'Poppins';
+	  font-style: normal;
+	  font-weight: 400;
+	  src: local('Poppins'),
+	  local('Poppins-Regular'),
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-regular.woff2') format('woff2'), 
+	  url('./fonts/src: poppins-v20-latin/poppins-v20-latin-regular.woff') format('woff'),
+	  
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-regular.ttf') format('truetype'), 
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-regular.svg#Poppins') format('svg'), 
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-regular.eot'), 
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-regular.eot?#iefix') format('embedded-opentype'); 
+	}
+	
+	@font-face {
+	  font-display: swap;
+	  font-family: 'Poppins'; 
+	  font-style: italic;
+	  font-weight: 400;
+	  src: local('Poppins'),
+	  local('Poppins-Italic'),
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-italic.woff2') format('woff2'), 
+	  url('./fonts/src: poppins-v20-latin/poppins-v20-latin-italic.woff') format('woff'),
+	  
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-italic.ttf') format('truetype'), 
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-italic.svg#Poppins') format('svg'), 
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-italic.eot'), 
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-italic.eot?#iefix') format('embedded-opentype'); 
+	}
+	@font-face {
+	  font-display: swap;
+	  font-family: 'Poppins';
+	  font-style: normal;
+	  font-weight: 700;
+	  src: local('Poppins'),
+	  local('Poppins-Bold'),
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-700.woff2') format('woff2'), 
+	  url('./fonts/src: poppins-v20-latin/poppins-v20-latin-700.woff') format('woff'),
+	  
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-700.ttf') format('truetype'), 
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-700.svg#Poppins') format('svg'), 
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-700.eot'), 
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-700.eot?#iefix') format('embedded-opentype'); 
+	}
+	@font-face {
+	  font-display: swap;
+	  font-family: 'Poppins';
+	  font-style: italic;
+	  font-weight: 700;
+	  src: local('Poppins'),
+	  local('Poppins-BoldItalic'),
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-700italic.woff2') format('woff2'), 
+	  url('./fonts/src: poppins-v20-latin/poppins-v20-latin-700italic.woff') format('woff'),
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-700italic.ttf') format('truetype'), 
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-700italic.svg#Poppins') format('svg'), 
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-700italic.eot'), 
+	  url('./fonts/poppins-v20-latin/poppins-v20-latin-700italic.eot?#iefix') format('embedded-opentype'); 
+	}
+
+	header, footer {
+	  background-color: #333;
+	  padding: 25px 50px;
+	  color: #fff;
+	  font-weight: bold;
+	  font-size: 24px;
+	}
+  
+	header {
+		
+		/* background-image: url('background-image.webp');
+		background-size: cover;
+		background-position: 50% 25%; */
+		/* border-bottom: 4px solid var(--color-dark-blue);  */
+		background-color: var(--color-green);
+		/*border-bottom: 4px solid var(--color-orange);  */
+		/* background-color: var(--color-blue); */
+		border-bottom: 4px solid var(--color-dark-blue); 
+	}
+
+	header .content {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+	
+	.header__deadline::before {
+		content: '';
+		display: inline-block;
+		align-items: center;
+		margin-right: 10px;
+		width: 30px;
+		height: 3px;
+		background-color: #fff;
+		transform: translateY(-7px);
+	}
+
+	.header__description {
+		font-weight: normal;
+		margin-top: 0px;
+	}
+  
+	body {
+	  padding: 0;
+	  margin: 0; 
+	  background-color: #f7f7f7;
+	}
+  
+	main {
+	  margin-top: 50px;
+	}
+  
+	.content {
+	  max-width: 1200px;
+	  width: 100%;
+	  margin: 0 auto;
+	  padding: 0 20px;
+	}
+  
+	h1 {
+	  margin-top: 50px;
+	}
+  
+	.main__middle {
+	  display: flex;
+	  gap: 30px;
+	  margin-top: 50px;
+	}
+  
+	.main__middle a {
+	  display: inline-block;
+	  text-decoration: none;
+	  color: #fff;
+	  padding: 12px 24px;
+	  border: 2px solid #fff;
+	  transition: all 0.3s ease-in-out;
+	  margin-top: 20px;
+	  width: fit-content;
+	  border-radius: 50px;
+	  font-weight: 600;
+	  font-size: 14px;
+	  text-align: center;
+	}
+
+	.card {
+		font-size: 15px;
+		background-color: #fcfcfc;
+		padding: 25px;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	.cards {
+		display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-top: 50px;
+	}
+  
+	.card:nth-of-type(4n+3) {
+    	border-left: 4px solid var(--color-orange);
+	}
+
+	.card:nth-of-type(4n+3) a{
+    	
+		background-color: var(--color-orange);
+	  	margin-top: auto;
+	}
+
+	.card:nth-of-type(4n+3) a:hover{
+	  background-color: #fff;
+	  color:var(--color-orange);
+	  border-color: var(--color-orange);
+	}
+
+	.card:nth-of-type(4n+2) {
+		border-left: 4px solid var(--color-green);
+	}
+
+	.card:nth-of-type(4n+2) a{
+		
+		background-color: var(--color-green);
+	  	margin-top: auto;
+	}
+
+	.card:nth-of-type(4n+2) a:hover{
+	  background-color: #fff;
+	  color:var(--color-green);
+	  border-color: var(--color-green);
+	}
+
+	.card:nth-of-type(4n+1) {
+		border-left: 4px solid var(--color-blue);
+	}
+
+	.card:nth-of-type(4n+1) a{
+		
+		background-color: var(--color-blue);
+	  	margin-top: auto;
+	}
+
+	.card:nth-of-type(4n+3) a:hover{
+	  background-color: #fff;
+	  color:var(--color-blue);
+	  border-color: var(--color-blue);
+	}
+
+	.card:nth-of-type(4n) {
+		border-left: 4px solid var(--color-dark-blue);
+	}
+
+	.card:nth-of-type(4n) a{
+		
+		background-color: var(--color-dark-blue);
+	  	margin-top: auto;
+	}	
+
+	.card:nth-of-type(4n) a:hover{
+	  background-color: #fff;
+	  color:var(--color-dark-blue);
+	  border-color: var(--color-dark-blue);
+	}
+
+	/* .card:nth-of-type(2n+1) {
+    	border-left: 4px solid var(--color-red);
+	}
+
+	.card:nth-of-type(2n+1) a {
+		background-color: var(--color-red);
+	  	margin-top: auto;
+	}
+
+	.card:nth-of-type(2n+1) a:hover {
+	  background-color: #fff;
+	  color: var(--color-red);
+	  border-color: var(--color-red);
+	}
+
+	.card:nth-of-type(2n) {
+		border-left: 4px solid var(--color-dark-blue);
+	}
+
+	.card:nth-of-type(2n) a {
+		background-color: var(--color-dark-blue);
+	  	margin-top: auto;
+	}
+
+	.card:nth-of-type(2n) a:hover {
+	  background-color: #fff;
+	  color: var(--color-dark-blue);
+	  border-color: var(--color-dark-blue);
+	} */
+  
+	.socials {
+	  display: flex;
+	  justify-content: center;
+	  margin-left: 50px;
+	}
+  
+	.socials svg {
+	  width: 40px;
+	  height: 40px;
+	  margin: 10px;
+	  fill: #999;
+	  transition: all 0.2s ease-in-out;
+	}
+  
+	.socials svg:hover {
+	  transform: scale(1.1);
+	  fill: #fff;
+	}
+  
+	footer {
+	  margin-top: 50px;
+	  border-top: 4px solid #812926;
+	}
+
+	footer .content {
+		display: flex;
+	    align-items: center;
+	    justify-content: baseline;
+	}
+  
+	.main__bottom {
+	  margin-top: 100px;
+	}
+  
+	.main__bottom a {
+	  color: #3A9B89;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease-in-out;
+      border-bottom: 1px dotted #3A9B89;
+	}
+  
+	.main__bottom a:hover {
+      color: #B1C976;
+      border-bottom-color: #B1C976;
+    }
+  
+    p, ul {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+  
+    ul {
+      padding-left: 20px;
+    }
+  
+    ul li {
+      margin-bottom: 10px;
+      position: relative;
+    }
+  
+    ul li::marker {
+      color: var(--color-red); 
+      font-weight: bold;
+      display: inline-block; 
+      width: 1em;
+      margin-left: -1em;
+    }
+  
+	h1 {
+      font-size: 28px;
+      color: #333;
+      margin-top: 0;
+      margin-bottom: 25px;
+      /* border-bottom: 3px solid var(--color-dark-blue);  */
+	  border-bottom: 3px solid var(--color-green);  
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+  
+    h2 {
+      font-size: 24px;
+      color: #333;
+      margin-top: 0;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+  
+    strong {
+      color: #333;
+    }
+
+    .feature-icons {
+      margin: 15px 0;
+    }
+    
+    .feature-icons p {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 8px;
+    }
+    
+    .feature-icons p::before {
+      position: absolute;
+      left: 0;
+      color: var(--color-red);
+      font-weight: bold;
+    }
+
+    @media (min-width: 769px) {
+		header img {
+			position: absolute;
+			top: 25px;
+			right: 25px;
+		}
+
+		header .content {
+			height: 200px;
+			position: relative;
+		}
+	}
+  
+    @media (max-width: 768px) {
+      header .content {
+        align-items: center;
+      }
+
+      .content {
+        width: auto;
+      }
+
+      .main__middle {
+        flex-direction: column;
+      }
+
+      .cards {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      header, footer {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .socials {
+        margin: 20px 0 0 0;
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+      
+      h2 {
+        font-size: 20px;
+      }
+      
+      .main__middle a {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+</style>
 
 </head>
 
-<style>
-  body{
-    font-family:"Poppins";
-  }
-  /**
- * All of the CSS for your public-facing functionality should be
- * included in this file.
- */
-
-
-/* poppins-regular - latin */
-@font-face {
-	font-display: swap;
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Poppins'),
-	local('Poppins-Regular'),
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-	url('./fonts/src: poppins-v20-latin/poppins-v20-latin-regular.woff') format('woff'),
-	/* Modern Browsers */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-regular.svg#Poppins') format('svg'), /* Legacy iOS */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-regular.eot'), /* IE9 Compat Modes */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-regular.eot?#iefix') format('embedded-opentype'); /* IE6-IE8 */	 
-  }
-  /* poppins-italic - latin */
-  @font-face {
-	font-display: swap;
-	font-family: 'Poppins'; 
-	font-style: italic;
-	font-weight: 400;
-	src: local('Poppins'),
-	local('Poppins-Italic'),
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
-	url('./fonts/src: poppins-v20-latin/poppins-v20-latin-italic.woff') format('woff'),
-	/* Modern Browsers */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-italic.svg#Poppins') format('svg'), /* Legacy iOS */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-italic.eot'), /* IE9 Compat Modes */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-italic.eot?#iefix') format('embedded-opentype'); /* IE6-IE8 */	 
-  }
-  /* poppins-700 - latin */
-  @font-face {
-	font-display: swap;
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 700;
-	src: local('Poppins'),
-	local('Poppins-Bold'),
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-	url('./fonts/src: poppins-v20-latin/poppins-v20-latin-700.woff') format('woff'),
-	/* Modern Browsers */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-700.svg#Poppins') format('svg'), /* Legacy iOS */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-700.eot'), /* IE9 Compat Modes */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-700.eot?#iefix') format('embedded-opentype'); /* IE6-IE8 */	 
-  }
-  /* poppins-700italic - latin */
-  @font-face {
-	font-display: swap;
-	font-family: 'Poppins';
-	font-style: italic;
-	font-weight: 700;
-	src: local('Poppins'),
-	local('Poppins-BoldItalic'),
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-700italic.woff2') format('woff2'), /* Super Modern Browsers */
-	url('./fonts/src: poppins-v20-latin/poppins-v20-latin-700italic.woff') format('woff'),
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-700italic.svg#Poppins') format('svg'), /* Legac, iOS */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-700italic.eot'), /* IE9 Compat Modes */
-	url('./fonts/poppins-v20-latin/poppins-v20-latin-700italic.eot?#iefix') format('embedded-opentype'); /* IE6-IE8 */
-  }
-	 
-</style>
-
-<script>
-
-	console.log("test");
-
-	// Create a Date object for March 2, 2025 at midnight.
-	const redirectDate = new Date("March 2, 2025 00:00:00");
-  
-	// Get the current date and time.
-	const now = new Date();
-  
-	// If the current time is equal to or later than the redirect date, redirect.
-	if (now >= redirectDate) {
-	  window.location.href = "https://survey.zohopublic.com/zs/g7B6P0";
-	}
-  </script>
-
 <body>
-  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;min-height:100vh;">
-    <img src="logo-impact-hub.svg" width="300" />
-    <h1>Impact Hub survey</h1>
-    <p style="width:600px; text-align: center;">Thank you for your intersest in Impact Hub Global Community Survey, the survey will be available here on March 3rd!</p>
-    
+	<header>
+		<div class="content">
+			<img src="logo-impact-hub-alt.svg" width="100" />
+			<p class="header__deadline">DEADLINE 3 APRIL</p>
+			<p class="header__description">Complete the survey for a chance to win prizes up to EUR 400</p>
+		</div>
+	</header>
+	<main>
+		<div class="content">
+			<div class="main__top">
+				<h1>Global Community Survey</h1>
+				<p>This year, we're elevating our data collection process to make it more valuable to you—our members and partners.</p>
+				<p>We invite all members and anyone engaged in the Impact Hub community—locally or globally to take our Community Satisfaction Survey.</p>
+				<p>Founders and enterprise leaders are also encouraged to provide their Enterprise Data to increase visibility in the ecosystem and unlock new opportunities.</p>
+			</div>
+			<div class="main__middle cards">
+				<div class="card">
+					<h3>Community Satisfaction Survey</h3>
+					<p><strong>Who is this for?</strong></p>
+					<p><strong>This survey is for members, programme participants, regular event attendees, mentors, investors, and anyone engaged in the Impact Hub community</strong>—locally or globally.</p>
+					<p><strong>Why participate?</strong></p>
+					<p>Your feedback helps us understand your work activities, impact, and community experience, allowing us to enhance our offerings and better support changemakers like you.</p>
+					<div class="feature-icons">
+						<p>📌 Available in: Czech, English, French, German, Italian, Spanish, Portuguese, and Traditional Chinese.</p>
+						<p>⏳ Takes: 15-20 minutes to complete.</p>
+						<p>🎁 Prizes: Four winners will be selected in a raffle, with prizes of up to EUR 400 each.</p>
+						<p>🔒 Confidential: All responses are aggregated and anonymised.</p>
+					</div>
+					<a href="https://survey.zohopublic.com/zs/g7B6P0">Take the Community Satisfaction Survey</a>
+				</div>
+				<div class="card">
+					<h3>Enterprise Data Collection</h3>
+					<p><strong>Who is this for?</strong></p>
+					<p>This section is for <strong>founders, directors, CEOs, and enterprise leaders.</strong></p>
+					<p><strong>Why share your data?</strong></p>
+					<p>By providing insights about your enterprise, you help us track impact, environment, and diversity metrics while unlocking new opportunities for your business.</p>
+					<p>📌 Hosted on Good Market, a not-for-profit digital commons that allows you to control your data and avoid re-entering information. If you already have a profile, some responses will be pre-filled.</p>
+					<p><strong>Benefits of joining Good Market:</strong></p>
+					<ul>
+						<li>Increase visibility for your enterprise</li>
+						<li>Gain Good Market approval & opt into People & Planet First Verification</li>
+						<li>Share products, services, job vacancies, fundraising campaigns, and more</li>
+						<li>Connect with potential partners, customers, and investors</li>
+						<li>Access curated marketplaces & procurement opportunities</li>
+					</ul>
+					<p>🔒 <strong>Privacy:</strong> Responses are stored under Impact Hub GmbH's privacy policy and anonymised for reporting. Financial details remain confidential. By clicking Continue, you consent to sharing your data with Impact Hub GmbH.</p>
+					<a href="https://www.goodmarket.global/survey/impact-hub-enterprise-survey/landing">Add your enterprise data</a>
+				</div>
+			</div>
+			<div class="main__bottom">
+				<p><strong>Thank you for your participation. Your feedback helps us create a better Impact Hub ecosystem! 🌍</strong></p>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="content">
+			<img src="logo-impact-hub.svg" width="100" />
+			<div class="socials">
+				<a href="https://www.facebook.com/ImpactHubNetwork/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="3743 9450 40 40"><path d="M20,0A20,20,0,1,0,40,20,20,20,0,0,0,20,0Zm5.173,20H21.891V32h-4.5V20h-3V15.863h3l-.008-2.434C17.385,10.058,18.3,8,22.27,8h3.306v4.137H23.5c-1.546,0-1.62.576-1.62,1.653l-.008,2.072h3.717Z" transform="translate(3743 9450)"></path></svg></a>
+				<a href="https://www.linkedin.com/connect-services/ads_experience/?session_redirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F122770%2Fadmin%2Fdashboard" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="3923 9450 40 40"><path d="M20,0A20,20,0,1,0,40,20,19.992,19.992,0,0,0,20,0ZM14.724,29.84H9.947V15.472h4.777ZM12.335,13.512h0a2.5,2.5,0,1,1,.036-4.991,2.485,2.485,0,0,1,2.674,2.5A2.516,2.516,0,0,1,12.335,13.512ZM31.943,29.84H27.166V22.175c0-1.925-.677-3.244-2.424-3.244a2.643,2.643,0,0,0-2.46,1.747,3.051,3.051,0,0,0-.143,1.176v8.021H17.362s.071-13.012,0-14.367h4.777V17.54a4.812,4.812,0,0,1,4.314-2.389c3.137,0,5.49,2.068,5.49,6.453Z" transform="translate(3923 9450)"></path></svg></a>
+				<a href="https://www.instagram.com/impacthubnetwork/" target="_blank">
+				<svg width="150px" height="150px" viewBox="0 0 150 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<defs></defs>
+					<g id="Page-1" stroke="none" stroke-width="1" fill="" fill-rule="evenodd">
+						<g id="instagram" fill-rule="nonzero" fill="">
+							<path d="M74.9997864,-1.03215103e-05 C33.5786658,0.000105947466 0.000214813486,33.5784779 1.02774294e-06,74.9995985 C-7.64208152e-05,94.8908482 7.90162308,113.967434 21.9668136,128.032718 C36.032004,142.098003 55.1085366,149.999831 74.9997864,149.999886 C94.8911114,149.999946 113.967756,142.098169 128.03304,128.032872 C142.098325,113.967575 150.000084,94.8909235 150.000006,74.9995985 C149.999793,33.5783081 116.421077,-0.000134093357 74.9997864,-1.03215103e-05 L74.9997864,-1.03215103e-05 Z M70.0619244,27.1993784 C71.7053158,27.1993784 73.3505681,27.2022307 74.9997864,27.2022307 C81.5967139,27.2022307 88.1314887,27.1479014 94.7284026,27.5146238 C102.383297,27.8881373 109.166995,29.6306117 114.768162,35.2318201 C120.369289,40.8328927 122.111859,47.6163053 122.485264,55.2711588 C122.858641,61.8680863 122.796298,68.4029426 122.796298,74.9997343 C122.796298,81.5966618 122.858777,88.1313823 122.485264,94.7283097 C122.11175,102.383299 120.369289,109.166983 114.768162,114.768056 C109.166995,120.369264 102.383297,122.111875 94.7284026,122.485252 C88.1314887,122.857408 81.5967139,122.796287 74.9997864,122.796287 C68.4028725,122.796287 61.8680841,122.864199 55.2711702,122.485252 C47.6162487,122.111739 40.8325917,120.369264 35.231424,114.768056 C29.6302699,109.166983 27.887714,102.383299 27.5143092,94.7283097 C27.1407957,88.1313823 27.2031385,81.5966618 27.2031385,74.9997343 C27.2031385,68.4029426 27.1406598,61.8680863 27.5143092,55.2711588 C27.8878227,47.6163053 29.6302699,40.8328927 35.231424,35.2318201 C40.8325917,29.6306117 47.6162487,27.8881373 55.2711702,27.5146238 C60.2188522,27.2348282 65.1317363,27.1995142 70.0619244,27.1995142 L70.0619244,27.1993784 Z M66.6383675,35.7377611 C59.5389625,35.739391 51.1289598,36.0094073 46.8075173,37.7210499 C44.6292816,38.5916759 43.0111397,39.6504169 41.3307907,41.3306843 C39.6504554,43.0110876 38.5920947,44.6291481 37.7208032,46.807343 C35.2314104,53.0932356 35.7915312,68.0294291 35.7915312,74.9995985 C35.7915312,81.9700394 35.2313968,96.9066405 37.7208032,103.192397 C38.5921083,105.370592 39.6504554,106.988788 41.3307907,108.669192 C43.0111397,110.349459 44.6292816,111.407385 46.8075173,112.27869 C53.0932605,114.768056 68.0294676,114.207921 74.9997864,114.207921 C81.9701187,114.207921 96.9067469,114.767513 103.192477,112.27869 C105.370699,111.408064 106.988827,110.349459 108.669176,108.669192 C110.349498,106.988788 111.407478,105.370592 112.27877,103.192397 C114.76819,96.9066405 114.208055,81.9700394 114.208055,74.9995985 C114.208055,68.0294291 114.76819,53.0932356 112.27877,46.807343 C111.407464,44.6291481 110.349498,43.0110876 108.669176,41.3306843 C106.988827,39.6504169 105.370699,38.592355 103.192477,37.7210499 C96.9067469,35.2316843 81.9701187,35.7918187 74.9997864,35.7918187 C72.8215643,35.7918187 69.8653748,35.7374895 66.6383675,35.7374895 L66.6383675,35.7377611 Z M100.516259,43.7579788 C103.690214,43.7579788 106.241949,46.3092797 106.241949,49.4831937 C106.241949,52.6572434 103.690214,55.208816 100.516259,55.208816 C97.34225,55.208816 94.7905552,52.6572434 94.7905552,49.4831937 C94.7905552,46.3092797 97.34225,43.7579788 100.516259,43.7579788 Z M74.9997864,50.4791844 C88.5670462,50.4791844 99.5203363,61.4325016 99.5203363,74.9995985 C99.5203363,88.5669669 88.5670462,99.5202842 74.9997864,99.5202842 C61.4325402,99.5202842 50.4792365,88.5669669 50.4792365,74.9995985 C50.4792365,61.4325016 61.4325402,50.4791844 74.9997864,50.4791844 Z M74.9997864,59.06755 C66.2246368,59.06755 59.0675885,66.2246119 59.0675885,74.9995985 C59.0675885,83.7748567 66.2246368,90.9319186 74.9997864,90.9319186 C83.7749495,90.9319186 90.9319978,83.7748567 90.9319978,74.9995985 C90.9319978,66.2246119 83.7749495,59.06755 74.9997864,59.06755 Z" id="path3808"></path>
+						</g>
+					</g>
+				</svg></a>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>
