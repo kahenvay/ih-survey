@@ -442,6 +442,60 @@
         box-sizing: border-box;
       }
     }
+
+	.enterprise-cta {
+    margin-top: 20px;
+}
+
+.language-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    margin: 10px 0 20px 0;
+}
+
+.lang-link {
+    color: var(--color-dark-blue);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 3px 5px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.lang-link:hover {
+    background-color: var(--color-dark-blue);
+    color: white;
+}
+
+.lang-flag {
+    font-size: 16px;
+}
+
+.lang-separator {
+    color: #ccc;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+    .language-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .lang-separator {
+        display: none;
+    }
+    
+    .lang-link {
+        display: block;
+        width: 100%;
+        padding: 8px 10px;
+    }
+}
+
+
 </style>
 
 <script>
@@ -488,10 +542,9 @@
 				<div class="card">
 					<h3>Enterprise Data Collection</h3>
 					<p><strong>Who is this for?</strong></p>
-					<p>This section is for <strong>founders, directors, CEOs, and enterprise leaders.</strong></p>
+					<p>This section is for founders, directors, CEOs, and enterprise leaders.</p>
 					<p><strong>Why share your data?</strong></p>
 					<p>By providing insights about your enterprise, you help us track impact, environment, and diversity metrics while unlocking new opportunities for your business.</p>
-					<p>📌 Available in English; more languages coming very soon.</p>
 					<p>📌 Hosted on Good Market, a not-for-profit digital commons that allows you to control your data and avoid re-entering information. If you already have a profile, some responses will be pre-filled.</p>
 					<p><strong>Benefits of joining Good Market:</strong></p>
 					<ul>
@@ -501,8 +554,44 @@
 						<li>Connect with potential partners, customers, and investors</li>
 						<li>Access curated marketplaces & procurement opportunities</li>
 					</ul>
-					<p>🔒 Confidential: Responses are stored under Impact Hub GmbH's privacy policy and used in aggregate form for reporting.</p>
-					<a href="https://www.goodmarket.global/survey/impact-hub-enterprise-survey/landing">Add your enterprise data</a>
+					<p>🔒 <strong>Privacy:</strong> Responses are stored under Impact Hub GmbH's privacy policy and anonymised for reporting. Financial details remain confidential. By clicking Continue, you consent to sharing your data with Impact Hub GmbH.</p>
+					
+					<div class="enterprise-cta">
+						<p><strong>Take the enterprise survey in:</strong></p>
+						<div class="language-links">
+							<a href="https://www.goodmarket.global/survey/impact-hub-enterprise-survey/landing" class="lang-link">
+								English
+							</a>
+							<span class="lang-separator">•</span>
+							<a href="https://www.goodmarket.global/survey/impact-hub-enterprise-survey/landing?lang=cs" class="lang-link">
+								Čeština
+							</a>
+							<span class="lang-separator">•</span>
+							<a href="https://www.goodmarket.global/survey/impact-hub-enterprise-survey/landing?lang=de" class="lang-link">
+								Deutsch
+							</a>
+							<span class="lang-separator">•</span>
+							<a href="https://www.goodmarket.global/survey/impact-hub-enterprise-survey/landing?lang=es" class="lang-link">
+								Español
+							</a>
+							<span class="lang-separator">•</span>
+							<a href="https://www.goodmarket.global/survey/impact-hub-enterprise-survey/landing?lang=fr" class="lang-link">
+								Français
+							</a>
+							<span class="lang-separator">•</span>
+							<a href="https://www.goodmarket.global/survey/impact-hub-enterprise-survey/landing?lang=it" class="lang-link">
+								Italiano
+							</a>
+							<span class="lang-separator">•</span>
+							<a href="https://www.goodmarket.global/survey/impact-hub-enterprise-survey/landing?lang=pt" class="lang-link">
+								Português
+							</a>
+							<span class="lang-separator">•</span>
+							<a href="https://www.goodmarket.global/survey/impact-hub-enterprise-survey/landing?lang=zh" class="lang-link">
+								中文
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="main__bottom">
