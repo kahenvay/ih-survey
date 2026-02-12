@@ -1,0 +1,6 @@
+[build]
+  # This command checks the variable SITE_STATUS.
+  # If it is "soon", it copies soon.html to index.html.
+  # Otherwise, it copies home.html to index.html.
+  command = "if [ \"$SITE_STATUS\" = \"soon\" ]; then cp soon.html index.html; else cp home.html index.html; fi"
+  publish = "."
